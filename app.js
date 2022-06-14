@@ -4,12 +4,18 @@ const axios = require("axios");
 
 const urls = process.env.URLS.split(",");
 schedule(
-  "0 */5 * * * *",
-  () => {
+  "*/4 * * * * *",
+  async () => {
     console.log("heroku requests initiated");
-    for (const url of urls) {
-      console.log(`making request to ${url}`);
-      axios.get(url);
+    const promises = [];
+    try {
+      for (const url of urls) {
+        console.log(`making request to ${url}`);
+        promises.push(axios.get(url));
+      }
+      await Promise.all(promises);
+    } catch (error) {
+      console.log("an error occured");
     }
   },
   { scheduled: true }
