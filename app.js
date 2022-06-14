@@ -4,7 +4,7 @@ const axios = require("axios");
 
 const urls = process.env.URLS.split(",");
 schedule(
-  "*/4 * * * * *",
+  "0 */5 * * * *",
   async () => {
     console.log("heroku requests initiated");
     const promises = [];
