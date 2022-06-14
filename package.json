@@ -1,0 +1,13 @@
+{
+  "name": "heroku-dont-leave-me",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Ose-4g/heroku-dont-leave-me.git",
+  "author": "<osemudiamenitua@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "node-cron": "^3.0.1"
+  }
+}
